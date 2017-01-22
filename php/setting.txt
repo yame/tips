@@ -1,0 +1,47 @@
+CentOS
+
+1、备份
+
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+
+2、下载新的CentOS-Base.repo 到/etc/yum.repos.d/
+
+CentOS 5
+
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
+CentOS 6
+
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
+CentOS 7
+
+wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+3、之后运行yum makecache生成缓存
+
+
+
+打开命令行并执行下列命令安装最新版本的 Composer (以下指令摘自 https://getcomposer.org/download/ ，请前往查看最新的安装指令)：
+
+php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
+
+php composer-setup.php
+
+php -r "unlink('composer-setup.php');"
+执行第一条命令下载下来的 composer-setup.php 脚本将简单的检测 php.ini 中的参数设置，如果某些参数未正确设置则会给出警告；然后下载最新版本的 composer.phar 文件到当前目录。
+
+上述 3 条命令的作用依次是：
+
+下载安装脚本（composer-setup.php）到当前目录。
+执行安装过程。
+删除安装脚本 -- composer-setup.php 。
+
+$ composer selfupdate
+
+$ composer config -g repo.packagist composer https://packagist.phpcomposer.com
+~/.composer/config.json
+
+
+phpunit 
+
+wget https://phar.phpunit.de/phpunit.phar 
+mv phpunit.phar /usr/local/bin/phpunit
+
