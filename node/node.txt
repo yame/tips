@@ -1,0 +1,22 @@
+
+$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+$ cnpm install [name]
+
+
+npm
+设置全局使用指定的镜像:
+
+$ npm config set registry < registry url >
+或者在安装时才指定:
+
+$ npm install --registry < registry url >
+当然, 每次都要输入那么长串的 registry url 的话, 实在太麻烦, 可以使用 nrm 这个模块来切换镜像:
+
+// 全局安装
+$ npm install -g nrm
+// 查看有哪些镜像
+$ nrm ls
+// 对比各个镜像的访问速度
+$ nrm test
+// 使用淘宝的镜像
+$ nrm use taobao
