@@ -9,7 +9,7 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-PS1='[\[\e[32m\]#\##\[\e[31m\]\u@\[\e[36m\]\h \w]\$\[\e[m\] '
+PS1='[\[\e[31m\]\u@\[\e[36m\]\h \w]\$\[\e[m\] '
 
 alias ll='ls -al --color=auto'
 

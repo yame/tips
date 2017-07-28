@@ -1,38 +1,12 @@
-CentOS
-
-1、备份
-
-mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-
-2、下载新的CentOS-Base.repo 到/etc/yum.repos.d/
-
-CentOS 5
-
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-5.repo
-CentOS 6
-
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-6.repo
-CentOS 7
-
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-3、之后运行yum makecache生成缓存
 
 
+$ curl -o composer-setup.php https://getcomposer.org/installer
+$ php -r "if (hash_file('SHA384', 'composer-setup.php') === '669656bab3166a7aff8a7506b8cb2d1c292f042046c5a994c43155c0be6190fa0355160742ab2e1c88d40d5be660b410') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+$ php composer-setup.php --install-dir=/usr/bin --filename=composer
+$ php -r "unlink('composer-setup.php');"
 
-打开命令行并执行下列命令安装最新版本的 Composer (以下指令摘自 https://getcomposer.org/download/ ，请前往查看最新的安装指令)：
-
-php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php
-
-php composer-setup.php
-
-php -r "unlink('composer-setup.php');"
-执行第一条命令下载下来的 composer-setup.php 脚本将简单的检测 php.ini 中的参数设置，如果某些参数未正确设置则会给出警告；然后下载最新版本的 composer.phar 文件到当前目录。
-
-上述 3 条命令的作用依次是：
-
-下载安装脚本（composer-setup.php）到当前目录。
-执行安装过程。
-删除安装脚本 -- composer-setup.php 。
+或者直接下载
+$ curl -o /usr/bin/composer https://getcomposer.org/composer.phar
 
 $ composer selfupdate
 

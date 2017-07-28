@@ -1,15 +1,100 @@
 yum install gcc
 yum -y install libxml2-devel openssl-devel curl-devel libjpeg-devel libpng-devel freetype-devel openldap-devel libxslt-devel
  libmcrypt-devel
+ 
+yum -y install libXpm-devel 
 
 安装PHP7
-wget -O php-7.1.0.tar.gz  http://cn2.php.net/get/php-7.1.0.tar.gz/from/this/mirror
-tar -zxf php-7.1.0.tar.gz
-cd php-7.1.0
+curl -o php-7.1.7.tar.gz http://cn2.php.net/distributions/php-7.1.7.tar.gz
+tar -zxf php-7.1.7.tar.gz
+cd php-7.1.7
 ./configure --help
 ./configure --with-curl  --with-freetype-dir --with-xpm-dir=/usr  --with-gd  --with-gettext  --with-iconv-dir  --with-kerberos  --with-libdir=lib64  --with-libxml-dir  --with-mysqli  --with-openssl  --with-pcre-regex  --with-pdo-mysql  --with-pdo-sqlite  --with-pear  --with-png-dir  --with-xmlrpc  --with-xsl  --with-zlib  --enable-fpm  --enable-bcmath  --enable-libxml  --enable-inline-optimization  --enable-gd-native-ttf  --enable-mbregex  --enable-mbstring  --enable-opcache  --enable-pcntl  --enable-shmop  --enable-soap  --enable-sockets  --enable-sysvsem  --enable-xml  --enable-zip
 
 make && make install
 yum install vim -y
 cd /usr/local/etc/
+
+mv php-fpm.conf.default php-fpm.conf
+vim php-fpm.conf  125gg  去掉 NONE/
+mv www.conf.default www.conf
+
+
+vim /etc/systemd/system/php-fpm.service
+
+========================
+[Unit]
+Description=PHP FPM
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/sbin/php-fpm
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+
+
+[Install]
+WantedBy=multi-user.target
+======================================
+
+$ cd /usr/local/nginx/conf
+
+=========================
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        location ~ [^/]\.php(/|$) {
+            fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+            if (!-f $document_root$fastcgi_script_name) {
+                return 404;
+            }
+
+            fastcgi_param HTTP_PROXY "";
+
+            fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+
+            fastcgi_pass 127.0.0.1:9000;
+            fastcgi_index index.php;
+            include fastcgi_params;
+        }
+		
+server 平级
+
+include vhosts/*.conf;
+
+=================================
+
+$ mkdir vhosts/
+$ vim uooc.app.conf
+
+server{
+        listen 80;
+        server_name uooc.app;
+        root /data/www/ucweb;
+
+        location / {
+                index index.php;
+        }
+        location ~ [^/]\.php(/|$) {
+				fastcgi_split_path_info ^(.+?\.php)(/.*)$;
+				if (!-f $document_root$fastcgi_script_name) {
+					return 404;
+				}
+
+				fastcgi_param HTTP_PROXY "";
+
+				fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;
+
+				fastcgi_pass 127.0.0.1:9000;
+				fastcgi_index index.php;
+				include fastcgi_params;
+        }
+
+}
+
+
+
+
+
 
