@@ -17,3 +17,6 @@ DROP USER 'username'@'host';
 
 查看用户的授权
 show grants for dog@localhost;
+
+查看数据存放位置
+show global variables like '%datadir%';
