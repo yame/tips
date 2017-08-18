@@ -1,0 +1,48 @@
+AMQP
+Service Registry
+Netflix Eureka   https://github.com/Netflix/eureka/wiki/Eureka-at-a-glance
+
+Spring Boot    http://projects.spring.io/spring-boot/
+Remote Procedure Invocation (RPI)
+http://kafka.apache.org/intro
+Protocol Buffers  https://developers.google.com/protocol-buffers/
+ Cassandra, Memcache, Zookeeper and NSQ
+ 
+NSQ http://nsq.io/
+Jenkins  https://jenkins.io/index.html
+zipkin  Zipkin is a distributed tracing system. It helps gather timing data needed to troubleshoot latency problems in microservice architectures. It manages both the collection and lookup of this data
+Dapper, a Large-Scale Distributed Systems Tracing Infrastructure
+
+Thrift binary RPC  &  AMQP messaging protocol
+
+ On the JVM you can use one of the NIO-based frameworks such Netty, Vertx, Spring Reactor, or JBoss Undertow
+ 
+ reactive approach
+ 
+ One option is to use an asynchronous, messaging-based mechanism. 
+ Some implementations use a message broker such as JMS or AMQP. 
+ Others, such as Zeromq, are brokerless and the services communicate directly.
+ 
+ 
+Netflix Hystrix [https://github.com/Netflix/Hystrix]
+Hystrix is a latency and fault tolerance library designed to isolate points of access to remote systems, services and 3rd party libraries, stop cascading failure and enable resilience in complex distributed systems where failure is inevitable.    
+
+Services can use human readable, text‑based formats such as JSON or XML. 
+Alternatively, they can use a binary format (which is more efficient) such as Avro or Protocol Buffers
+
+The API Gateway is responsible :
+--request routing 
+--composition
+--and protocol translation
+
+https://www.nginx.com/blog/introduction-to-microservices/
+
+ inter-process communication (IPC)
+ 
+  RabbitMQ, Apache Kafka, Apache ActiveMQ, and NSQ.
+   including RAML and Swagger
+ 
+ https://www.programmableweb.com/news/how-to-design-great-apis-api-first-design-and-raml/how-to/2015/07/10
+ http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven
+ https://martinfowler.com/articles/richardsonMaturityModel.html
+ http://martin.kleppmann.com/2012/12/05/schema-evolution-in-avro-protocol-buffers-thrift.html
