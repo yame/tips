@@ -1,6 +1,20 @@
+ZooKeeper  
+
+服务注册(Service Registry)
+--ZooKeeper   http://zookeeper.apache.org/
+--Eureka Server  https://github.com/Netflix/eureka
+--Consul  https://www.consul.io/
+
+
+
+
 AMQP
-Service Registry
-Netflix Eureka   https://github.com/Netflix/eureka/wiki/Eureka-at-a-glance
+Zookeeper, Redis, Hazelcast, Consul.
+Netflix OSS components (Eureka, Hystrix, Zuul, Archaius, etc.).
+Zipkin, HTrace and log-based (e.g. ELK) tracing.
+
+zuul  https://github.com/Netflix/zuul
+http://projects.spring.io/spring-cloud/
 
 Spring Boot    http://projects.spring.io/spring-boot/
 Remote Procedure Invocation (RPI)
@@ -38,11 +52,44 @@ The API Gateway is responsible :
 https://www.nginx.com/blog/introduction-to-microservices/
 
  inter-process communication (IPC)
- 
+ Keepalived
   RabbitMQ, Apache Kafka, Apache ActiveMQ, and NSQ.
    including RAML and Swagger
+   
+ Kubernetes https://github.com/kubernetes/kubernetes/blob/master/docs/design/architecture.md 
+ Marathon https://mesosphere.github.io/marathon/docs/service-discovery-load-balancing.html
+ registrator https://github.com/gliderlabs/registrator
  
  https://www.programmableweb.com/news/how-to-design-great-apis-api-first-design-and-raml/how-to/2015/07/10
  http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven
  https://martinfowler.com/articles/richardsonMaturityModel.html
  http://martin.kleppmann.com/2012/12/05/schema-evolution-in-avro-protocol-buffers-thrift.html
+ https://netflix.github.io/
+ https://www.airpair.com/scalable-architecture-with-docker-consul-and-nginx
+ https://www.nginx.com/products/on-the-fly-reconfiguration/
+ https://hashicorp.com/blog/introducing-consul-template.html
+ 
+ 
+Other examples of service registries include:
+	etcd – A highly available, distributed, consistent, key‑value store that is used for shared configuration and service discovery. Two notable projects that use etcd are Kubernetes and Cloud Foundry.
+	
+	consul – A tool for discovering and configuring services. It provides an API that allows clients to register and discover services. Consul can perform health checks to determine service availability.
+	
+	Apache Zookeeper – A widely used, high‑performance coordination service for distributed applications. Apache Zookeeper was originally a subproject of Hadoop but is now a top‑level project.
+	
+ distributed transactions  https://en.wikipedia.org/wiki/Two-phase_commit_protocol	
+	
+ multi‑step process involving only local transactions	http://queue.acm.org/detail.cfm?id=1394128
+
+Elasticsearch stores and queries text to use a text search engine 
+Neo4j  a service that stores social graph data should probably use a graph database
+	
+LinkedIn Databus  https://github.com/linkedin/databus	
+Command Query Responsibility Segregation (CQRS) 	https://github.com/cer/event-sourcing-examples/wiki
+Microservice Chassis framework http://microservices.io/patterns/microservice-chassis.html
+
+Strategy 1 – Stop Digging
+Strategy 2 – Split Frontend and Backend
+Strategy 3 – Extract Services
+	Prioritizing Which Modules to Convert into Services
+	How to Extract a Module
