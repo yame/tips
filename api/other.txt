@@ -1,17 +1,31 @@
 ZooKeeper  
 
+API网关
+|-Zuul https://github.com/Netflix/zuul
+   |- https://blog.heroku.com/using_netflix_zuul_to_proxy_your_microservices
+
 服务注册(Service Registry)
---ZooKeeper   http://zookeeper.apache.org/
---Eureka Server  https://github.com/Netflix/eureka
---Consul  https://www.consul.io/
+|-ZooKeeper   http://zookeeper.apache.org/
+|-Eureka Server  https://github.com/Netflix/eureka
+|-Consul  https://www.consul.io/
 
 
+IOC容器
+|-Guice https://github.com/google/guice
+  |--https://github.com/Netflix/governator  扩展
 
-
+  
+  http://www.jhipster.tech/consul/
+  http://metrics.dropwizard.io/3.2.3/
 AMQP
 Zookeeper, Redis, Hazelcast, Consul.
 Netflix OSS components (Eureka, Hystrix, Zuul, Archaius, etc.).
 Zipkin, HTrace and log-based (e.g. ELK) tracing.
+
+内存数据库
+H2 http://www.h2database.com/
+Derby https://db.apache.org/derby/
+HSQL  http://hsqldb.org/
 
 zuul  https://github.com/Netflix/zuul
 http://projects.spring.io/spring-cloud/
