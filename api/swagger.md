@@ -1,5 +1,9 @@
-artisan make:controller SwaggerController
+Ôªø```bash
+$ artisan make:controller SwaggerController
+```
 
+### Â¢ûÂä†SwaggerÊï∞ÊçÆÊé•Âè£
+```php
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -10,74 +14,63 @@ use App\Http\Controllers\Controller;
 class SwaggerController extends Controller
 {
     /**
-     * ∑µªÿJSON∏Ò ΩµƒSwagger∂®“Â
-     */
-    public function getJSON()
-    {
-
-    }
-
-    /**
-     * ºŸ…Ë «œÓƒø÷–µƒ“ª∏ˆAPI
-     */
-    public function getMyData()
-    {
-
-    }
-
-}
-Route::group(['prefix' => 'swagger'], function () {
-    Route::get('json', 'SwaggerController@getJSON');
-    Route::get('my-data', 'SwaggerController@getMyData');
-});
-
-
-/**
-     * ∑µªÿJSON∏Ò ΩµƒSwagger∂®“Â
+     * ËøîÂõûJSONÊ†ºÂºèÁöÑSwaggerÂÆö‰πâ
      *
-     * ’‚¿Ô–Ë“™“ª∏ˆ÷˜`Swagger`∂®“Â£∫
+     * ËøôÈáåÈúÄË¶Å‰∏Ä‰∏™‰∏ª`Swagger`ÂÆö‰πâÔºö
      * @SWG\Swagger(
      *   @SWG\Info(
-     *     title="Œ“µƒ`Swagger`APIŒƒµµ",
+     *     title="ÊàëÁöÑ`Swagger`APIÊñáÊ°£",
      *     version="1.0.0"
      *   )
      * )
      */
     public function getJSON()
     {
-        // ƒ„ø…“‘Ω´APIµƒ`Swagger Annotation`–¥‘⁄ µœ÷APIµƒ¥˙¬Î≈‘£¨¥”∂¯∑Ω±„Œ¨ª§£¨
-        // `swagger-php`ª·…®√Ëƒ„∂®“Âµƒƒø¬º£¨◊‘∂Ø∫œ≤¢À˘”–∂®“Â°£’‚¿ÔŒ“√«÷±Ω””√`Controller/`
-        // Œƒº˛º–°£
+        // ‰Ω†ÂèØ‰ª•Â∞ÜAPIÁöÑ`Swagger Annotation`ÂÜôÂú®ÂÆûÁé∞APIÁöÑ‰ª£Á†ÅÊóÅÔºå‰ªéËÄåÊñπ‰æøÁª¥Êä§Ôºå
+        // `swagger-php`‰ºöÊâ´Êèè‰Ω†ÂÆö‰πâÁöÑÁõÆÂΩïÔºåËá™Âä®ÂêàÂπ∂ÊâÄÊúâÂÆö‰πâ„ÄÇËøôÈáåÊàë‰ª¨Áõ¥Êé•Áî®`Controller/`
+        // Êñá‰ª∂Â§π„ÄÇ
         $swagger = \Swagger\scan(app_path('Http/Controllers/'));
 
         return response()->json($swagger, 200);
     }
 
-	
-	/**
-     * ºŸ…Ë «œÓƒø÷–µƒ“ª∏ˆAPI
+    
+    /**
+     * ÂÅáËÆæÊòØÈ°πÁõÆ‰∏≠ÁöÑ‰∏Ä‰∏™API
      *
      * @SWG\Get(path="/swagger/my-data",
      *   tags={"project"},
-     *   summary="ƒ√“ª–©…Ò√ÿµƒ ˝æ›",
-     *   description="«Î«Û∏√Ω”ø⁄–Ë“™œ»µ«¬º°£",
+     *   summary="Êãø‰∏Ä‰∫õÁ•ûÁßòÁöÑÊï∞ÊçÆ",
+     *   description="ËØ∑Ê±ÇËØ•Êé•Âè£ÈúÄË¶ÅÂÖàÁôªÂΩï„ÄÇ",
      *   operationId="getMyData",
      *   produces={"application/json"},
      *   @SWG\Parameter(
      *     in="formData",
      *     name="reason",
      *     type="string",
-     *     description="ƒ√ ˝æ›µƒ¿Ì”…",
+     *     description="ÊãøÊï∞ÊçÆÁöÑÁêÜÁî±",
      *     required=true,
      *   ),
-     *   @SWG\Response(response="default", description="≤Ÿ◊˜≥…π¶")
+     *   @SWG\Response(response="default", description="Êìç‰ΩúÊàêÂäü")
      * )
      */
     public function getMyData()
     {
-        //todo ¥˝ µœ÷
+        //todo ÂæÖÂÆûÁé∞
     }
-	
-	
-	git clone https://github.com/swagger-api/swagger-ui.git
-	copy dist to public
+}
+```
+### ÂÆö‰πâË∑ØÁî±
+
+```php
+Route::group(['prefix' => 'swagger'], function () {
+    Route::get('json', 'SwaggerController@getJSON');
+    Route::get('my-data', 'SwaggerController@getMyData');
+});
+```
+
+### Â§çÂà∂swagger ui
+```bash  
+$ git clone https://github.com/swagger-api/swagger-ui.git
+$ copy dist to public
+```
