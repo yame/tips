@@ -1,8 +1,13 @@
-﻿```bash
+﻿## Laravel 增加 swagger 接口文档
+
+### 增加控制器
+
+```bash
 $ artisan make:controller SwaggerController
 ```
 
-### 增加Swagger数据接口
+### 增加 Swagger 数据接口
+
 ```php
 namespace App\Http\Controllers;
 
@@ -34,7 +39,7 @@ class SwaggerController extends Controller
         return response()->json($swagger, 200);
     }
 
-    
+
     /**
      * 假设是项目中的一个API
      *
@@ -60,6 +65,7 @@ class SwaggerController extends Controller
     }
 }
 ```
+
 ### 定义路由
 
 ```php
@@ -69,8 +75,9 @@ Route::group(['prefix' => 'swagger'], function () {
 });
 ```
 
-### 复制swagger ui
-```bash  
+### 复制 swagger ui
+
+```bash
 $ git clone https://github.com/swagger-api/swagger-ui.git
 $ copy dist to public
 ```
