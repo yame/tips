@@ -1,1 +1,9 @@
-### ±¸·İÊı¾İ¿âtest
+ï»¿### å¤‡ä»½æ•°æ®åº“test
+```bash
+$ mysqldump -uroot -p test > `date +test.%Y%m%d%H%M%S.sql`
+```
+
+### æ¢å¤æ•°æ®åº“
+```bash
+$ mysql -u root -p test < xx.sql
+```
