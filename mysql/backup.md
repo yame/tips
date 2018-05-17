@@ -5,5 +5,5 @@ $ mysqldump -uroot -p test > `date +test.%Y%m%d%H%M%S.sql`
 
 ### 恢复数据库
 ```bash
-$ mysql -u root -p test < xx.sql
+$ mysql -uroot -p test < xx.sql
 ```
