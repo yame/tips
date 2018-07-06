@@ -4,13 +4,14 @@ yum -y install libxml2-devel openssl-devel curl-devel libjpeg-devel libpng-devel
 yum -y install libtidy-devel
  
 yum -y install libXpm-devel 
+yum -y install libmcrypt-devel 
 
 安装PHP7
 curl -o php-7.1.7.tar.gz http://cn2.php.net/distributions/php-7.1.7.tar.gz
 tar -zxf php-7.1.7.tar.gz
 cd php-7.1.7
 ./configure --help
-./configure --with-curl  --with-freetype-dir --with-xpm-dir=/usr  --with-gd  --with-gettext  --with-iconv-dir  --with-kerberos  --with-libdir=lib64  --with-libxml-dir  --with-mysqli  --with-openssl  --with-pcre-regex  --with-pdo-mysql  --with-pdo-sqlite  --with-pear  --with-png-dir  --with-xmlrpc  --with-xsl  --with-zlib  --enable-fpm  --enable-bcmath  --enable-libxml  --enable-inline-optimization  --enable-gd-native-ttf  --enable-mbregex  --enable-mbstring  --enable-opcache  --enable-pcntl  --enable-shmop  --enable-soap  --enable-sockets  --enable-sysvsem  --enable-xml  --enable-zip --with-tidy=/usr
+./configure --with-curl  --with-freetype-dir --with-xpm-dir=/usr  --with-gd  --with-gettext  --with-iconv-dir  --with-kerberos  --with-libdir=lib64  --with-libxml-dir  --with-mysqli  --with-openssl  --with-pcre-regex  --with-pdo-mysql  --with-pdo-sqlite  --with-pear  --with-png-dir  --with-xmlrpc  --with-xsl  --with-zlib  --enable-fpm  --enable-bcmath  --enable-libxml  --enable-inline-optimization  --enable-gd-native-ttf  --enable-mbregex  --enable-mbstring  --enable-opcache  --enable-pcntl  --enable-shmop  --enable-soap  --enable-sockets  --enable-sysvsem  --enable-xml  --enable-zip --with-tidy=/usr --with-mcrypt
 
 make && make install
 yum install vim -y
