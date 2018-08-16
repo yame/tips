@@ -10,6 +10,7 @@ fi
 
 # User specific aliases and functions
 PS1='[\[\e[31m\]\u@\[\e[36m\]\h \w]\$\[\e[m\] '
+export PS1="\[$(tput bold)$(tput setab 0)$(tput setaf 1)\]\u@\h:\[$(tput setaf 3)\]\w # \[$(tput sgr0)\]"
 
 alias ll='ls -al --color=auto'
 

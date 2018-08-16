@@ -7,3 +7,4 @@ yum-config-manager --enable nodesource
 
 yum update  //更新软件
 rpm -qa 查看安装的软件
+rpm -ivh 安装
