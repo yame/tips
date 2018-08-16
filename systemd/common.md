@@ -1,9 +1,10 @@
+ï»¿```
 systemctl list-units --type=service
 systemctl daemon-reload
-systemctl start nginx.service              #Æô¶¯nginx·şÎñ
-systemctl enable nginx.service             #ÉèÖÃ¿ª»ú×ÔÆô¶¯
-systemctl disable nginx.service            #Í£Ö¹¿ª»ú×ÔÆô¶¯
-systemctl status nginx.service             #²é¿´·şÎñµ±Ç°×´Ì¬
-systemctl restart nginx.service¡¡          #ÖØĞÂÆô¶¯·şÎñ
-systemctl list-units --type=service        #²é¿´ËùÓĞÒÑÆô¶¯µÄ·şÎñ
-
+systemctl start nginx.service              #å¯åŠ¨nginxæœåŠ¡
+systemctl enable nginx.service             #è®¾ç½®å¼€æœºè‡ªå¯åŠ¨
+systemctl disable nginx.service            #åœæ­¢å¼€æœºè‡ªå¯åŠ¨
+systemctl status nginx.service             #æŸ¥çœ‹æœåŠ¡å½“å‰çŠ¶æ€
+systemctl restart nginx.serviceã€€          #é‡æ–°å¯åŠ¨æœåŠ¡
+systemctl list-units --type=service        #æŸ¥çœ‹æ‰€æœ‰å·²å¯åŠ¨çš„æœåŠ¡
+```

@@ -1,14 +1,14 @@
-����=������1
-���ӷ�ʽ�������ַת����NAT��
-�˿�ת����22 =�� 22
+﻿网络=》网卡1
+连接方式：网络地址转换（NAT）
+端口转发：22 =》 22
 
-���ص㣺
-/   ����һЩ��
+挂载点：
+/   （大一些）
 /boot
 /home
 /root
 
-�鿴ʹ�ÿռ�
+查看使用空间
 [root@HiYame ~]# df -h
 Filesystem                 Size  Used Avail Use% Mounted on
 /dev/mapper/centos-root     50G  840M   50G   2% /
