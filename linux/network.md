@@ -10,4 +10,6 @@ ONBOOT=yes
 
 $ systemctl restart network
 
+$ netstat -tulpn | grep :80
+
 ```

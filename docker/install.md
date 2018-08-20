@@ -27,3 +27,17 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker
 
 ```
+
+
+# 设置docker数据目录
+```
+$ systemctl stop docker
+$ vi /usr/lib/systemd/system/docker.service
+$ mkdir /docker
+
+//设置目录
+ExecStart=/usr/bin/dockerd --data-root=/docker
+
+$ systemctl daemon-reload
+$ systemctl start docker
+```

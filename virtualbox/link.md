@@ -18,3 +18,27 @@
         YOURSHAREFOLDERNAME 为共享的目录名称
 
     4、“以管理者身份运行” VirtualBox　即可！
+	
+	
+	
+	扩容空间
+	关闭虚拟机
+VBoxManage modifyhd <uid> --resize <mb大小>
+
+启动虚拟机
+df -h
+fdisk /dev/sda
+	 
+首先输入命令：n(添加新分区)之后回车： 
+接着输入命令:p 
+剩下步骤全按回车默认， 
+最后输入命令w保存分区信息。
+
+格式化
+mkfs -t ext4 /dev/sda4
+
+
+mkdir /docker
+mount /dev/sda3 /docker
+
+/dev/sda3     /docker   ext4    defaults  0  1
