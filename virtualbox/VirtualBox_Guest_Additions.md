@@ -35,3 +35,8 @@ $ cd /media/VirtualBoxGuestAdditions
 
 # 32-bit and 64-bit systems run following
 $ ./VBoxLinuxAdditions.run
+
+
+
+$ vim /etc/rc.local
+$ mount -t vboxsf github /root/github

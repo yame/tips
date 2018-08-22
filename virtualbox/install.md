@@ -20,3 +20,5 @@ tmpfs                      600M     0  600M   0% /sys/fs/cgroup
 /dev/mapper/centos-root00   44G   33M   44G   1% /root
 /dev/mapper/centos-home     40G   33M   40G   1% /home
 tmpfs                      120M     0  120M   0% /run/user/0
+
+
