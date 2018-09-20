@@ -26,4 +26,10 @@ $ docker start jenkins
 ```
 $ docker exec -it jenkins bash
 #/ cat /var/jenkins_home/secrets/initialAdminPassword
+OR
+$ docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+
+$ wget http://localhost:8080/jnlpJars/jenkins-cli.jar
+$ java -jar jenkins-cli.jar -s http://localhost:8080 install-plugin xx 
+$ java -jar jenkins-cli.jar -s http://localhost:8080 safe-restart
 ```
